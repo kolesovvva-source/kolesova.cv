@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Fix 100vh on mobile (address bar causes white strip at bottom)
+  // Fix 100vh on mobile — only on resize/orientation, NOT on scroll (prevents jitter)
   function setViewportHeight() {
     const h = window.visualViewport?.height ?? window.innerHeight;
     document.documentElement.style.setProperty('--vh', `${Math.round(h)}px`);
   }
   setViewportHeight();
   window.visualViewport?.addEventListener('resize', setViewportHeight);
-  window.visualViewport?.addEventListener('scroll', setViewportHeight);
   window.addEventListener('resize', setViewportHeight);
+  window.addEventListener('orientationchange', () => setTimeout(setViewportHeight, 100));
 
   // Project more toggle (A little more about project)
   document.querySelectorAll('.project-more-summary').forEach(btn => {
@@ -28,36 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNav = document.querySelector('.mobile-project-nav');
   const layout = document.querySelector('.layout');
 
-  let lastScrollTop = 0;
-  const scrollThreshold = 80;
-  let ticking = false;
-
-  function handleMobileScroll() {
-    if (window.innerWidth > 768 || !mobileNav) return;
-
-    const scrollTop = rightPanel?.scrollTop ?? window.scrollY ?? document.documentElement.scrollTop;
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      if (scrollTop > scrollThreshold) {
-        if (scrollTop > lastScrollTop) {
-          mobileNav.classList.add('mobile-nav-hidden');
-          layout?.classList.add('mobile-nav-hidden');
-        } else {
-          mobileNav.classList.remove('mobile-nav-hidden');
-          layout?.classList.remove('mobile-nav-hidden');
-        }
-      } else {
-        mobileNav.classList.remove('mobile-nav-hidden');
-        layout?.classList.remove('mobile-nav-hidden');
-      }
-      lastScrollTop = scrollTop;
-      ticking = false;
-    });
-  }
-
-  rightPanel?.addEventListener('scroll', handleMobileScroll, { passive: true });
-  window.addEventListener('scroll', handleMobileScroll, { passive: true });
+  // Mobile nav stays visible — no hide/show on scroll to prevent layout jitter
 
   function showProject(projectId) {
     contents.forEach(c => {
