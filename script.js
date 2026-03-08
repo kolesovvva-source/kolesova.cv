@@ -28,7 +28,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNav = document.querySelector('.mobile-project-nav');
   const layout = document.querySelector('.layout');
 
-  // Mobile nav stays visible — no hide/show on scroll to prevent layout jitter
+  let lastScrollTop = 0;
+  const scrollThreshold = 80;
+  let ticking = false;
+
+  function handleMobileScroll() {
+    if (window.innerWidth > 768 || !mobileNav) return;
+
+    const scrollTop = rightPanel?.scrollTop ?? window.scrollY ?? document.documentElement.scrollTop;
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      if (scrollTop > scrollThreshold) {
+        if (scrollTop > lastScrollTop) {
+          mobileNav.classList.add('mobile-nav-hidden');
+          layout?.classList.add('mobile-nav-hidden');
+        } else {
+          mobileNav.classList.remove('mobile-nav-hidden');
+          layout?.classList.remove('mobile-nav-hidden');
+        }
+      } else {
+        mobileNav.classList.remove('mobile-nav-hidden');
+        layout?.classList.remove('mobile-nav-hidden');
+      }
+      lastScrollTop = scrollTop;
+      ticking = false;
+    });
+  }
+
+  rightPanel?.addEventListener('scroll', handleMobileScroll, { passive: true });
 
   function showProject(projectId) {
     contents.forEach(c => {
