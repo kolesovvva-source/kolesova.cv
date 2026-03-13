@@ -86,7 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   links.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      if (link.tagName === 'A') e.preventDefault();
       const projectId = link.dataset.project;
       showProject(projectId);
     });

@@ -1,16 +1,16 @@
-# Публикация на GitHub и kolesova.cv
+# Публикация на&nbsp;GitHub и&nbsp;kolesova.cv
 
-## Шаг 1: Создайте репозиторий на GitHub
+## Шаг 1: Создайте репозиторий на&nbsp;GitHub
 
-1. Перейдите на [github.com/new](https://github.com/new)
+1. Перейдите на&nbsp;[github.com/new](https://github.com/new)
 2. Название репозитория: `kolesova.cv` (или любое другое)
 3. Выберите **Public**
 4. **Не** добавляйте README, .gitignore или лицензию — проект уже готов
 5. Нажмите **Create repository**
 
-## Шаг 2: Загрузите код на GitHub
+## Шаг 2: Загрузите код на&nbsp;GitHub
 
-В терминале выполните (замените `YOUR_USERNAME` на ваш логин GitHub):
+В&nbsp;терминале выполните (замените `YOUR_USERNAME` на&nbsp;ваш логин GitHub):
 
 ```bash
 cd /Users/tanyajune/PF26
@@ -22,23 +22,23 @@ git push -u origin main
 
 ## Шаг 3: Включите GitHub Pages
 
-1. Откройте репозиторий на GitHub
+1. Откройте репозиторий на&nbsp;GitHub
 2. **Settings** → **Pages**
-3. В разделе **Source** выберите **Deploy from a branch**
-4. В **Branch** выберите `main` и папку `/ (root)`
+3. В&nbsp;разделе **Source** выберите **Deploy from a branch**
+4. В&nbsp;**Branch** выберите `main` и&nbsp;папку `/ (root)`
 5. Нажмите **Save**
 
-Сайт будет доступен по адресу: `https://YOUR_USERNAME.github.io/kolesova.cv/`
+Сайт будет доступен по&nbsp;адресу: `https://YOUR_USERNAME.github.io/kolesova.cv/`
 
 ## Шаг 4: Подключите домен kolesova.cv
 
-1. В **Settings** → **Pages** найдите **Custom domain**
+1. В&nbsp;**Settings** → **Pages** найдите **Custom domain**
 2. Введите: `kolesova.cv`
 3. Нажмите **Save**
 
-### Настройка DNS у регистратора домена
+### Настройка DNS у&nbsp;регистратора домена
 
-Добавьте записи в панели управления доменом:
+Добавьте записи в&nbsp;панели управления доменом:
 
 | Тип | Имя | Значение |
 |-----|-----|----------|
@@ -48,6 +48,6 @@ git push -u origin main
 | A | @ | 185.199.111.153 |
 | CNAME | www | YOUR_USERNAME.github.io |
 
-*(Замените YOUR_USERNAME на ваш логин GitHub)*
+*(Замените YOUR_USERNAME на&nbsp;ваш логин GitHub)*
 
-Подождите 5–30 минут для обновления DNS. После этого сайт будет доступен на **http://kolesova.cv**
+Подождите 5–30 минут для обновления DNS. После этого сайт будет доступен на&nbsp;**http://kolesova.cv**
