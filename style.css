@@ -178,6 +178,121 @@ body {
   display: block;
 }
 
+/* ── Fun section ── */
+
+.project-content--fun {
+  padding: 48px 56px 80px;
+  overflow-x: visible;
+}
+
+.project-content--fun .project-text {
+  color: #525252;
+}
+
+.fun-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  margin-top: 32px;
+}
+
+.fun-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fun-block-text {
+  order: -1;
+}
+
+.fun-block-skeletons {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+  min-width: 0;
+  margin-right: -56px;
+  width: calc(100% + 56px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+  align-items: flex-start;
+}
+
+.fun-block-skeletons::-webkit-scrollbar {
+  height: 6px;
+}
+
+.fun-block-skeletons::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fun-block-skeletons::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+.fun-block-skeletons::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+.fun-skeleton {
+  width: 280px;
+  flex-shrink: 0;
+  aspect-ratio: 9 / 19;
+  background: #e5e5e5;
+  border-radius: 8px;
+}
+
+.fun-block-skeletons img {
+  width: 280px;
+  flex-shrink: 0;
+  aspect-ratio: 9 / 19;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+
+/* Wizz: groups of 2, 16px between images, 24px between groups, images fill container */
+.fun-block--wizz .fun-block-skeletons {
+  gap: 24px;
+}
+
+.fun-block--wizz .fun-block-skeletons img {
+  object-fit: cover;
+  height: auto;
+  aspect-ratio: unset;
+}
+
+.fun-block--wizz .fun-block-skeletons-group {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+/* Other: width like others, same height as other blocks */
+.fun-block--other .fun-block-skeletons img {
+  object-fit: contain;
+}
+
+.fun-block-title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-text);
+  margin: 0 0 2px;
+}
+
+.fun-block-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
 
 /* ── Layout ── */
 
@@ -286,7 +401,7 @@ body {
 }
 
 .designer-bio__lead {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .project-list {
@@ -417,6 +532,7 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 .project-title {
   font-size: 2.25rem;
@@ -1867,5 +1983,60 @@ body {
 
   .project-improvement-metric {
     font-size: 0.875rem;
+  }
+
+  .project-content--fun {
+    padding: 32px 20px 80px;
+    overflow-x: visible;
+  }
+
+  .fun-blocks {
+    gap: 56px;
+    margin-top: 24px;
+  }
+
+  .fun-block {
+    gap: 24px;
+  }
+
+  .fun-block-skeletons {
+    margin-right: -20px;
+    width: calc(100% + 20px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+  }
+
+  .fun-block-skeletons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .fun-skeleton {
+    width: 196px;
+    min-width: 196px;
+  }
+
+  .fun-block-skeletons img {
+    width: 196px;
+    min-width: 196px;
+  }
+
+  .fun-block-title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .fun-block-subtitle {
+    font-size: 16px;
+  }
+
+  .fun-block--wizz .fun-block-skeletons {
+    gap: 24px;
+  }
+
+  .fun-block--wizz .fun-block-skeletons-group {
+    gap: 16px;
   }
 }
