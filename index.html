@@ -2,6 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    /* GitHub Pages project URLs: without trailing slash, relative style.css resolves to site root → 404.
+       Custom domain (kolesova.cv) stays at /. */
+    (function () {
+      var baseHref = '/';
+      if (location.hostname.endsWith('github.io')) {
+        var parts = location.pathname.split('/').filter(function (s) { return s.length; });
+        if (parts.length >= 1) baseHref = '/' + parts[0] + '/';
+      }
+      var b = document.createElement('base');
+      b.href = baseHref;
+      document.head.insertBefore(b, document.head.firstChild);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Tatiana Kolesova — Senior Product Designer</title>
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
