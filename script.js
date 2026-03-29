@@ -93,6 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  document.querySelector('.about-back-link')?.addEventListener('click', () => {
+    const goPortfolio =
+      document.querySelector('.left-panel .project-link[data-project="project-1"]') ||
+      document.querySelector('.project-link[data-project="project-1"]');
+    goPortfolio?.click();
+  });
+
   const firstActive = document.querySelector('.project-content.active');
   if (firstActive) {
     requestAnimationFrame(() => {
@@ -163,5 +170,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     track.addEventListener('scroll', updateArrows);
     updateArrows();
+  });
+
+  // Results gallery arrows (Finance Search)
+  document.querySelectorAll('.project-results-gallery').forEach(gallery => {
+    const track = gallery.querySelector('.project-results-gallery-track');
+    const prevBtn = gallery.querySelector('.project-results-gallery-arrow--prev');
+    const nextBtn = gallery.querySelector('.project-results-gallery-arrow--next');
+    if (!track || !prevBtn || !nextBtn) return;
+
+    function updateResultsArrows() {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      prevBtn.disabled = track.scrollLeft <= 0;
+      nextBtn.disabled = maxScroll <= 0 || track.scrollLeft >= maxScroll - 1;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      const slideWidth = track.clientWidth || track.offsetWidth;
+      const target = Math.max(0, track.scrollLeft - slideWidth);
+      track.scrollTo({ left: target, behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      const slideWidth = track.clientWidth || track.offsetWidth;
+      const maxScroll = track.scrollWidth - (track.clientWidth || track.offsetWidth);
+      const target = Math.min(maxScroll, track.scrollLeft + slideWidth);
+      track.scrollTo({ left: target, behavior: 'smooth' });
+    });
+
+    track.addEventListener('scroll', updateResultsArrows);
+    updateResultsArrows();
   });
 });

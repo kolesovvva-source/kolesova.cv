@@ -1,0 +1,69 @@
+<svg width="1600" height="720" viewBox="0 0 1600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="720" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F6F6F6"/>
+      <stop offset="1" stop-color="#EFEFEF"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="280" y1="140" x2="1320" y2="580" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1A1A1A" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#1A1A1A" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="shadow" x="-40" y="-40" width="1680" height="800" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="26" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="720" rx="48" fill="url(#bg)"/>
+
+  <!-- Soft structure grid -->
+  <g opacity="0.55">
+    <path d="M200 140H1400" stroke="#1A1A1A" stroke-opacity="0.08" stroke-width="2"/>
+    <path d="M200 220H1400" stroke="#1A1A1A" stroke-opacity="0.06" stroke-width="2"/>
+    <path d="M200 300H1400" stroke="#1A1A1A" stroke-opacity="0.06" stroke-width="2"/>
+    <path d="M200 380H1400" stroke="#1A1A1A" stroke-opacity="0.06" stroke-width="2"/>
+    <path d="M200 460H1400" stroke="#1A1A1A" stroke-opacity="0.06" stroke-width="2"/>
+    <path d="M200 540H1400" stroke="#1A1A1A" stroke-opacity="0.06" stroke-width="2"/>
+    <path d="M200 620H1400" stroke="#1A1A1A" stroke-opacity="0.08" stroke-width="2"/>
+  </g>
+
+  <!-- Main cards -->
+  <g filter="url(#shadow)">
+    <rect x="200" y="170" width="520" height="380" rx="40" fill="#FFFFFF"/>
+    <rect x="760" y="170" width="640" height="380" rx="40" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Left: tokens -->
+  <g>
+    <text x="252" y="238" font-family="IBM Plex Sans, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="26" fill="#1A1A1A" opacity="0.9">Tokens</text>
+    <rect x="252" y="262" width="220" height="18" rx="9" fill="#1A1A1A" opacity="0.08"/>
+    <rect x="252" y="294" width="180" height="18" rx="9" fill="#1A1A1A" opacity="0.06"/>
+    <rect x="252" y="326" width="260" height="18" rx="9" fill="#1A1A1A" opacity="0.06"/>
+
+    <text x="252" y="404" font-family="IBM Plex Sans, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="26" fill="#1A1A1A" opacity="0.9">Components</text>
+    <rect x="252" y="428" width="416" height="92" rx="24" fill="url(#accent)"/>
+    <rect x="276" y="456" width="180" height="14" rx="7" fill="#1A1A1A" opacity="0.10"/>
+    <rect x="276" y="478" width="260" height="14" rx="7" fill="#1A1A1A" opacity="0.06"/>
+  </g>
+
+  <!-- Right: patterns -->
+  <g>
+    <text x="812" y="238" font-family="IBM Plex Sans, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="26" fill="#1A1A1A" opacity="0.9">Patterns</text>
+    <rect x="812" y="262" width="512" height="18" rx="9" fill="#1A1A1A" opacity="0.08"/>
+    <rect x="812" y="294" width="420" height="18" rx="9" fill="#1A1A1A" opacity="0.06"/>
+    <rect x="812" y="326" width="560" height="18" rx="9" fill="#1A1A1A" opacity="0.06"/>
+
+    <text x="812" y="404" font-family="IBM Plex Sans, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="26" fill="#1A1A1A" opacity="0.9">Accessibility</text>
+    <rect x="812" y="428" width="564" height="92" rx="24" fill="url(#accent)"/>
+    <circle cx="844" cy="474" r="18" fill="#1A1A1A" opacity="0.12"/>
+    <rect x="876" y="458" width="200" height="14" rx="7" fill="#1A1A1A" opacity="0.10"/>
+    <rect x="876" y="480" width="320" height="14" rx="7" fill="#1A1A1A" opacity="0.06"/>
+  </g>
+
+  <!-- Bottom caption -->
+  <g opacity="0.55">
+    <text x="200" y="660" font-family="IBM Plex Sans, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#1A1A1A">
+      Tokens, components, and patterns
+    </text>
+  </g>
+</svg>
+
