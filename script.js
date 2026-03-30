@@ -93,13 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.querySelector('.about-back-link')?.addEventListener('click', () => {
-    const goPortfolio =
-      document.querySelector('.left-panel .project-link[data-project="project-1"]') ||
-      document.querySelector('.project-link[data-project="project-1"]');
-    goPortfolio?.click();
-  });
-
   const firstActive = document.querySelector('.project-content.active');
   if (firstActive) {
     requestAnimationFrame(() => {

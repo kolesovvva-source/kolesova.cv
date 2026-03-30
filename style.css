@@ -126,47 +126,12 @@ body {
   padding: 48px 56px 80px;
 }
 
-.about-back-wrap {
-  margin: 0 0 8px;
-  max-width: 80%;
-  box-sizing: border-box;
-}
-
-.about-back-link {
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 400;
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: var(--color-text-muted);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-.about-back-link:hover {
-  color: var(--color-text);
-}
-
-@media (max-width: 768px) {
-  .about-back-wrap {
-    max-width: 100%;
-  }
-}
-
 .project-content--about .project-text {
   margin-bottom: 16px;
 }
 
 .project-content--about .project-text:last-of-type {
   margin-bottom: 0;
-}
-
-.project-content--about .open-for-challenges {
-  margin-top: 16px;
-  margin-bottom: 16px;
 }
 
 .project-content--about .left-panel-footer__links {
@@ -182,41 +147,66 @@ body {
   display: none;
 }
 
-.about-gallery {
+.about-experience {
+  margin-top: 48px;
+}
+
+.about-role-block {
+  margin-bottom: 40px;
+}
+
+.about-role-block:last-child {
+  margin-bottom: 0;
+}
+
+.about-experience .about-role-block:first-child .project-subtitle {
+  margin-top: 0;
+}
+
+.about-highlights-details {
+  margin: 0;
+}
+
+.about-highlights-summary {
   display: flex;
-  gap: 16px;
-  margin-top: 32px;
-  margin-right: -56px;
-  width: calc(100% + 56px);
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 24px 0 0;
+  padding: 0;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  user-select: none;
 }
 
-.about-gallery::-webkit-scrollbar {
-  height: 6px;
+.about-highlights-summary::-webkit-details-marker {
+  display: none;
 }
 
-.about-gallery::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.about-gallery::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 3px;
-}
-
-.about-gallery::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
-}
-
-.about-gallery__img {
+.about-highlights-summary__icon {
+  display: inline-flex;
   flex-shrink: 0;
-  width: 364px;
-  height: 416px;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  color: var(--color-text-muted);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.about-highlights-details[open] .about-highlights-summary__icon {
+  color: var(--color-text);
+  transform: rotate(180deg);
+}
+
+.about-highlights-details .project-list {
+  margin: 12px 0 0;
 }
 
 /* ── Fun section ── */
@@ -565,10 +555,6 @@ body {
   transition: opacity var(--transition-medium), transform var(--transition-medium);
 }
 
-.project-content.project-content--about {
-  padding-left: 0;
-}
-
 .project-content.active {
   display: block;
 }
@@ -586,6 +572,10 @@ body {
   line-height: 1.2;
   margin-bottom: 16px;
   color: var(--color-text);
+}
+
+.project-content--about > .project-title {
+  font-weight: 500;
 }
 
 .project-role {
@@ -848,8 +838,7 @@ body {
   .project-years,
   .project-years-wrap,
   .project-subtitle,
-  .project-text,
-  .open-for-challenges
+  .project-text
 ),
 .project-content > ul.project-list {
   max-width: 80%;
@@ -865,10 +854,32 @@ body {
     .project-years,
     .project-years-wrap,
     .project-subtitle,
-    .project-text,
-    .open-for-challenges
+    .project-text
   ),
   .project-content > ul.project-list {
+    max-width: 100%;
+  }
+}
+
+.project-content .about-experience :is(
+  .project-subtitle,
+  .project-years,
+  .project-text,
+  .about-highlights-details
+),
+.project-content .about-experience ul.project-list {
+  max-width: 80%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .project-content .about-experience :is(
+    .project-subtitle,
+    .project-years,
+    .project-text,
+    .about-highlights-details
+  ),
+  .project-content .about-experience ul.project-list {
     max-width: 100%;
   }
 }
@@ -880,6 +891,10 @@ body {
   margin-top: 48px;
   margin-bottom: 16px;
   color: var(--color-text);
+}
+
+.about-experience .project-subtitle {
+  font-weight: 500;
 }
 
 .project-more-details {
@@ -1888,7 +1903,7 @@ body {
   }
 
   .project-content--about {
-    padding: 32px 20px 80px 0;
+    padding: 32px 20px 80px;
     min-width: 0;
     overflow-x: hidden;
   }
@@ -1952,19 +1967,6 @@ body {
 
   .about-links--mobile a:hover::after {
     width: 100%;
-  }
-
-  .about-gallery {
-    margin-top: 0;
-    margin-right: -20px;
-    width: calc(100% + 20px);
-    gap: 12px;
-  }
-
-  .about-gallery__img {
-    width: 260px;
-    height: 260px;
-    border-radius: 8px;
   }
 
   .project-title {

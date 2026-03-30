@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=expand_more" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_down">
   <link rel="stylesheet" href="style.css">
   <script>
     (function(){var h=window.innerHeight;document.documentElement.style.setProperty('--vh',h+'px');})();
@@ -138,9 +138,6 @@
 
       <!-- About Me -->
       <article class="project-content project-content--about" id="about">
-        <div class="about-back-wrap">
-          <button type="button" class="about-back-link">Вернуться в портфолио</button>
-        </div>
         <h1 class="project-title">Hi, my name is Tanya</h1>
         <p class="project-text">
           <span class="about-intro--desktop">I&nbsp;have over 6&nbsp;years of&nbsp;experience in&nbsp;product design. Before moving into design, I&nbsp;also worked in&nbsp;marketing and&nbsp;accounting — a&nbsp;path that helped me&nbsp;explore different fields before finding the&nbsp;one that truly resonates with&nbsp;me.</span>
@@ -152,20 +149,75 @@
         <p class="project-text">
           In&nbsp;my&nbsp;free time, I&nbsp;enjoy traveling, discovering new food, hiking, and&nbsp;spending time with&nbsp;friends.
         </p>
-        <p class="open-for-challenges">I'm currently open to&nbsp;new opportunities and&nbsp;exciting projects.</p>
+
+        <section class="about-experience" aria-label="Work experience">
+          <div class="about-role-block">
+            <h2 class="project-subtitle">Yandex Finance Search — Senior Product Designer</h2>
+            <p class="project-years">2022 – Present</p>
+            <p class="project-text">Designing financial products used by millions of people directly in Yandex Search — mortgages, loans, cards, deposits, and car insurance.</p>
+            <p class="project-text">I lead end-to-end design of financial blocks: from discovery and hypotheses to experiments and scaling. Focused on simplifying complex financial logic into intuitive user experiences and building a scalable design system across Search verticals.</p>
+            <details class="about-highlights-details">
+              <summary class="about-highlights-summary">
+                Highlights
+                <span class="material-symbols-outlined about-highlights-summary__icon" aria-hidden="true">keyboard_arrow_down</span>
+              </summary>
+              <ul class="project-list project-list--compact">
+                <li>Brought financial blocks from experiments to production, covering ~2% of all search queries</li>
+                <li>Increased mandatory car insurance sales by +87% in 6 months</li>
+                <li>Scaled Finance vertical to 1M MAU within 6 months</li>
+                <li>Designed a unified filtering system and reusable components across 9 Search products</li>
+                <li>Improved product discovery through curated selections, smart recommendations, and comparison tools</li>
+              </ul>
+            </details>
+          </div>
+          <div class="about-role-block">
+            <h2 class="project-subtitle">Yandex Doctor Search — Product Designer</h2>
+            <p class="project-years">2021 – 2022</p>
+            <p class="project-text">Designed and launched Doctor Search — a service embedded in Search that aggregates and structures information about doctors from across the web.</p>
+            <p class="project-text">Owned the product from concept to launch, focusing on helping users quickly find relevant specialists and make informed decisions.</p>
+            <details class="about-highlights-details">
+              <summary class="about-highlights-summary">
+                Highlights
+                <span class="material-symbols-outlined about-highlights-summary__icon" aria-hidden="true">keyboard_arrow_down</span>
+              </summary>
+              <ul class="project-list project-list--compact">
+                <li>Launched product covering 85% of practicing doctors in Russia, reaching 20K DAU</li>
+                <li>Increased engagement by +16% through similar and related doctor recommendations</li>
+                <li>Designed doctor profile cards and enabled search by name and surname</li>
+                <li>Introduced insurance-based filtering to improve relevance and usability</li>
+              </ul>
+            </details>
+          </div>
+          <div class="about-role-block">
+            <h2 class="project-subtitle">Yandex Search — Junior Product Designer</h2>
+            <p class="project-years">2020 – 2021</p>
+            <p class="project-text">Worked across multiple teams within Search, contributing to monetization, B2B tools, and healthcare products.</p>
+            <ul class="project-list project-list--compact">
+              <li>Designed and launched ad format experiments in Search Monetization</li>
+              <li>Contributed to Webmaster, a platform for website owners</li>
+              <li>Supported design for Yandex.Health telemedicine service</li>
+            </ul>
+          </div>
+          <div class="about-role-block">
+            <h2 class="project-subtitle">Yandex Search — Intern Product Designer</h2>
+            <p class="project-years">2019</p>
+            <p class="project-text">Collaborated with teams across Search ecosystem, including Sport (tournament tables) and Webmaster.</p>
+            <p class="project-text">Successfully completed internship and received a full-time offer.</p>
+          </div>
+          <div class="about-role-block">
+            <h2 class="project-subtitle">Galaxy Dating — Product Designer</h2>
+            <p class="project-years">2018 – 2019</p>
+          </div>
+          <div class="about-role-block">
+            <h2 class="project-subtitle">Estel &amp; Dymov — Graphic Designer</h2>
+            <p class="project-years">2016 – 2018</p>
+          </div>
+        </section>
 
         <div class="about-links about-links--mobile">
           <a href="https://www.linkedin.com/in/tatiana-kolesova/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://t.me/ms_magpie" target="_blank" rel="noopener">Telegram</a>
           <a href="CV/CV_TatianaKolesova.docx.pdf?v=20250312" target="_blank" rel="noopener">CV</a>
-        </div>
-
-        <div class="about-gallery">
-          <img src="images/Projects/About/2026-03-13%2017.06.56.jpg" alt="" class="about-gallery__img">
-          <img src="images/Projects/About/2026-03-13%2017.07.31.jpg" alt="" class="about-gallery__img">
-          <img src="images/Projects/About/2026-03-13%2017.07.38.jpg" alt="" class="about-gallery__img">
-          <img src="images/Projects/About/2026-03-13%2017.07.47.jpg" alt="" class="about-gallery__img">
-          <img src="images/Projects/About/2026-03-13%2017.07.54.jpg" alt="" class="about-gallery__img">
         </div>
       </article>
 
