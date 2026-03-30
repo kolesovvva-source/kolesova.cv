@@ -8,7 +8,8 @@
     (function () {
       var baseHref = '/';
       if (location.hostname.endsWith('github.io')) {
-        var parts = location.pathname.split('/').filter(function (s) { return s.length; });
+        var path = location.pathname.replace(/\/index\.html?$/i, '/');
+        var parts = path.split('/').filter(function (s) { return s.length; });
         if (parts.length >= 1) baseHref = '/' + parts[0] + '/';
       }
       var b = document.createElement('base');
@@ -360,10 +361,10 @@
               </div>
             </div>
             <div class="project-results-gallery-item">
-              <img src="images/Projects/Finance/Finance%20Projects/OSAGO.png?v=20260329" alt="OSAGO results">
+              <img src="images/Projects/Finance/Finance%20Projects/OSAGO.png?v=20260329" alt="Car's insurance results">
               <div class="project-results-caption">
                 <div class="project-results-caption__head">
-                  <h3 class="project-results-caption__title">OSAGO</h3>
+                  <h3 class="project-results-caption__title">Car's Insurance</h3>
                   <p class="project-results-caption__years">2024–2025</p>
                 </div>
               </div>
@@ -384,7 +385,7 @@
           Co-developed&nbsp;a&nbsp;design&nbsp;system for&nbsp;financial products in&nbsp;Search, working&nbsp;closely with&nbsp;another designer to&nbsp;create consistent patterns and&nbsp;reusable components across&nbsp;multiple product categories.
         </p>
         <div class="project-fullwidth-media">
-          <img src="images/Projects/Finance/Design%20System/Design%20System.png?v=20260325" alt="Design system overview" class="project-fullwidth-media__img">
+          <img src="images/Projects/Finance/design-system/design-system.png?v=20260329" alt="Design system overview" class="project-fullwidth-media__img">
         </div>
       </article>
 
